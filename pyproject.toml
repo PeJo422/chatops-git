@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "chatops-git"
+version = "0.1.0"
+description = "A small reference project for chat-driven GitHub workflows"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+chatops-git = "chatops_git.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/chatops_git"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
